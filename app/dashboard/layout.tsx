@@ -14,7 +14,7 @@ export default function DashboardLayout({
         <Sidebar />
         <main className="lg:pl-64 transition-all duration-300">
           <DashboardTopBar />
-          <div className="p-4 lg:p-8">
+          <div className="p-4 lg:p-6 xl:p-8">
             {children}
           </div>
         </main>

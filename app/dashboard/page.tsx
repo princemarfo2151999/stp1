@@ -18,12 +18,12 @@ import { RevenueChart } from "@/components/dashboard/revenue-chart"
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-8">
+    <div className="flex flex-col gap-8">
       {/* Page header */}
       <div className="lg:pt-0 pt-12">
-        <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-        <p className="text-muted-foreground mt-1">
-          Welcome back to watt.ma CPMS
+        <h1 className="text-2xl font-bold tracking-tight text-foreground text-balance">Dashboard</h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          Overview of your EV charging network
         </p>
       </div>
 

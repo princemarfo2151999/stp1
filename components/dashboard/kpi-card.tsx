@@ -19,22 +19,22 @@ export function KPICard({
   description,
 }: KPICardProps) {
   return (
-    <div className="rounded-xl border border-border bg-card p-6">
-      <div className="flex items-center justify-between">
-        <div className="space-y-1">
-          <p className="text-sm font-medium text-muted-foreground">{title}</p>
-          <p className="text-3xl font-bold text-card-foreground">{value}</p>
+    <div className="rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-sm">
+      <div className="flex items-start justify-between">
+        <div className="flex flex-col gap-1">
+          <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{title}</p>
+          <p className="text-2xl font-bold text-card-foreground">{value}</p>
         </div>
-        <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-          <Icon className="h-6 w-6 text-primary" />
+        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+          <Icon className="h-5 w-5 text-primary" />
         </div>
       </div>
       {(change || description) && (
-        <div className="mt-4 flex items-center gap-2">
+        <div className="mt-3 flex items-center gap-1.5">
           {change && (
             <span
               className={cn(
-                "text-sm font-medium",
+                "text-xs font-semibold",
                 changeType === "positive" && "text-success",
                 changeType === "negative" && "text-destructive",
                 changeType === "neutral" && "text-muted-foreground"
@@ -44,7 +44,7 @@ export function KPICard({
             </span>
           )}
           {description && (
-            <span className="text-sm text-muted-foreground">{description}</span>
+            <span className="text-xs text-muted-foreground">{description}</span>
           )}
         </div>
       )}

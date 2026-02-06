@@ -43,7 +43,6 @@ const ROLES: { value: RoleName; label: string; description: string; icon: React.
 
 export function RoleSwitcher() {
   const { roleName, setRole } = useRBAC()
-
   const currentRole = ROLES.find((r) => r.value === roleName) || ROLES[0]
 
   return (

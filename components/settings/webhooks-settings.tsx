@@ -99,7 +99,7 @@ export function WebhooksSettings() {
         setLoading(true)
         try {
             const response = await fetch('/api/settings', {
-                method: 'POST',
+                method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     category: 'webhooks',

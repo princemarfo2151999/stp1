@@ -59,18 +59,19 @@ export default function SettingsPage() {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-2xl font-bold text-foreground">Platform Settings</h1>
+        <h1 className="text-2xl font-bold tracking-tight text-foreground text-balance">Platform Settings</h1>
+        <p className="text-sm text-muted-foreground mt-1">Manage your platform configuration and integrations</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="flex flex-col gap-6">
-        <TabsList className="h-auto w-full justify-start gap-1.5 rounded-none border-b border-border bg-transparent p-0 pb-0 flex-wrap">
+        <TabsList className="h-auto w-full justify-start gap-2 rounded-none border-b border-border bg-transparent px-0 pb-3 flex-wrap">
           {settingsTabs.map((tab) => {
             const IconComponent = ICON_MAP[tab.icon] || Building2
             return (
               <TabsTrigger
                 key={tab.value}
                 value={tab.value}
-                className="gap-2 rounded-full border border-border bg-transparent px-4 py-1.5 text-sm font-medium text-muted-foreground data-[state=active]:border-primary data-[state=active]:bg-primary/5 data-[state=active]:text-primary mb-2"
+                className="gap-2 rounded-lg border border-border bg-transparent px-4 py-2 text-sm font-medium text-muted-foreground transition-all data-[state=active]:border-primary data-[state=active]:bg-primary/10 data-[state=active]:text-primary data-[state=active]:shadow-sm hover:bg-muted/50 mb-1"
               >
                 <IconComponent className="h-4 w-4" />
                 {tab.label}

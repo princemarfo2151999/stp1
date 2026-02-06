@@ -84,46 +84,42 @@ export function Sidebar() {
         <div className="flex h-full flex-col">
           {/* Logo */}
           <div className={cn(
-            "flex items-center gap-3 px-4 py-6 border-b border-sidebar-border",
+            "flex items-center gap-3 px-4 py-5 border-b border-sidebar-border",
             collapsed && "justify-center px-2"
           )}>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <Zap className="h-6 w-6 text-primary-foreground" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shrink-0">
+              <Zap className="h-5 w-5 text-primary-foreground" />
             </div>
             {!collapsed && (
               <div>
-                <h1 className="text-xl font-bold text-sidebar-foreground">WATTSC</h1>
-                <p className="text-xs text-muted-foreground">EV Charging Platform</p>
+                <h1 className="text-lg font-bold tracking-tight text-sidebar-foreground">watt.ma</h1>
+                <p className="text-[11px] text-sidebar-foreground/50">EV Charging Platform</p>
               </div>
             )}
           </div>
 
           {/* User card */}
           <div className={cn(
-            "px-4 py-4 border-b border-sidebar-border",
-            collapsed && "px-2"
+            "px-4 py-3 border-b border-sidebar-border",
+            collapsed && "px-2 py-3"
           )}>
             <div className={cn(
               "flex items-center gap-3",
               collapsed && "justify-center"
             )}>
-              <div className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                <span className="text-sm font-medium text-primary">{initials}</span>
+              <div className="h-8 w-8 rounded-full bg-sidebar-accent flex items-center justify-center shrink-0">
+                <span className="text-xs font-semibold text-sidebar-foreground">{initials}</span>
               </div>
               {!collapsed && (
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-sidebar-foreground truncate">
+                  <p className="text-sm font-medium text-sidebar-foreground truncate leading-tight">
                     {user.firstName} {user.lastName}
                   </p>
-                  <p className="text-xs text-muted-foreground truncate">
-                    {user.email}
-                  </p>
-                  <div className="mt-1 flex items-center gap-1.5">
-                    <Shield className="h-3 w-3 text-muted-foreground" />
+                  <div className="flex items-center gap-1.5 mt-0.5">
                     <Badge
                       variant="secondary"
                       className={cn(
-                        "text-[10px] px-1.5 py-0 h-4 font-medium",
+                        "text-[10px] px-1.5 py-0 h-4 font-medium border-0",
                         ROLE_BADGE_COLORS[roleName]
                       )}
                     >
@@ -133,11 +129,6 @@ export function Sidebar() {
                 </div>
               )}
             </div>
-            {!collapsed && (
-              <p className="text-[10px] text-muted-foreground mt-2 truncate">
-                {organizationName}
-              </p>
-            )}
           </div>
 
           {/* Navigation - filtered by role */}
